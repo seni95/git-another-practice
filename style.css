@@ -1,0 +1,75 @@
+header{
+    background-color: aliceblue;
+    position:fixed;
+    width: 100vw;
+
+}
+ul li, ul,.logo,nav {
+    display: inline-block;
+}
+nav{
+    float:right;
+}
+ul,li {margin:0; padding:0;}
+
+section{
+    width: 100vw;
+    height:100vh;
+}
+
+
+
+.intro{
+    display: inline-block;
+    width:40vw;
+}
+.myPhoto{
+    float:right
+}
+.main_contents{
+    width:80vw;
+margin:auto;
+padding-top: 20vh;
+}
+
+
+
+.work_img{
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+    /* background-image: url("./img/tarot_web.jpeg"); */
+    background-size: 100%;
+    display: inline-block;
+}
+
+.work_desc{
+    width: 40vw;
+    display: inline-block;
+}
+.work_desc div, button{
+    display: inline-block;
+}
+
+.work_list ul li{
+    width: 20vw;
+    height: 20vh;
+    border: 1px solid black;
+}
+
+.left_icons ul li{
+    width: 20vw;
+    height: 20vh;
+    border: 1px solid black;
+    display: block;
+}
+.left_icons {
+    float: left;
+}
+form{
+    width: 50vw;
+    height: 50vh;
+}
+.contact_wrapper{
+    margin:auto;
+}

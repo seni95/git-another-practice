@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo"><a href="/">Seyeony</a></div>
         <nav>
-            <div class="nav-content">
                 <ul>
                     <li><a href="">about</a></li>                    
                     <li><a href="">work</a></li>                    
@@ -18,31 +18,32 @@
                     <li><a href="">blog</a></li>                    
                     <li><a href="">git</a></li>                    
                 </ul>
-            </div>
         </nav>
     </header>
     <section id="main"> 
-        <div class="">
+        <div class="main_contents">
+        <div class="intro">
             <h1>꼼꼼하고 섬세한 개발자 황세연 입니다.</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cum voluptate non alias culpa iusto doloremque, nulla, dicta perferendis velit fugit esse labore ad deserunt dolores cumque deleniti dolor modi.
             </p>
         </div>
-        <div>
+        <div class="myPhoto">
             <img src="./img/Sera.jpg" alt="">
         </div>
+    </div>
     </section>
     <section>
         <div>
-            <div></div>
-            <div>
-                <h1></h1>
+        <div class="work_img"></div>
+            <div class="work_desc">
+                <h1>프로젝트 제목</h1>
                 <div><button>바로가기</button></div>
                 <div><button>세부설명</button></div>
-                <div></div>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente deserunt, aliquid aut rem iusto, accusamus deleniti quae corporis minus velit in tenetur, porro fugit et dolorem optio id nemo consequatur!</div>
             </div>
         </div>
-        <div>
+        <div class="work_list">
             <h2>작업물 리스트</h2>
             <ul>
                 <li><a href=""></a></li>
@@ -56,15 +57,15 @@
     </section>
 
     <section>
-
+<div class="contact_wrapper">
         <div>
             <h2>contact</h2>
         </div>
-        <div class="left-icons">
+        <div class="left_icons">
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>?</li>
+                <li>?</li>
+                <li>?</li>
             </ul>
         </div>
         <form action="">
@@ -73,15 +74,68 @@
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Phone Number">
             </div>
-            <input type="text" placeholder="Company Name">
+            <input type="text" placeholder="Company Name"><br>
             <textarea name="message" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
             <button type="submit">Submit</button>
 
         </form>
-    
+    </div>
     </section>
 
     <footer></footer>
-    <script></script>
+    <script type="text/javascript">
+
+// VARIABLES
+
+var ticking=false;
+var scrollSensitivitySetting=30;
+var slideDurationSetting=600;
+var currentSlideNumber=0;
+var totalSlideNumber=document.getElementsByTagName('section').length;
+
+// DETERMINE DELTA/SCROLL DIRECTION
+
+function parallaxScroll(event){
+    delta=event.wheelDelta;
+
+    if(ticking !=true){
+        if(delta<= -scrollSensitivitySetting){
+            //down scrol
+            ticking=true;
+            if (currentSlideNumber !== totalSlideNumber -1){
+                currentSlideNumber++;
+                nextItem();
+            }
+            slideDurationTimeOut(slideDurationSetting);        
+        }
+        if(delta>=scrollSensitivitySetting){
+            // UP SCROLL
+            ticking=true;
+            if(currentSlideNumber){
+                currentSlideNumber--;
+            }
+            previousItem();
+            slideDurationTimeOut(slideDurationSetting);
+        }
+    }
+}
+
+// SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES
+
+function slideDurationTimeOut(slideDuration){
+setTimeout(function(){
+    ticking=false;
+},slideDuration);
+}
+
+
+function nextItem(){
+
+}
+
+function previousItem(){
+
+}
+    </script>
 </body>
 </html>
